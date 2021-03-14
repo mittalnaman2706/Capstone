@@ -1,0 +1,27 @@
+database='capstone'
+
+CREATE TABLE `codechef` (
+ `Code` varchar(20) DEFAULT NULL,
+ `Name` varchar(50) DEFAULT NULL,
+ `Start` datetime DEFAULT NULL,
+ `End` datetime DEFAULT NULL,
+ `URL` varchar(100) NOT NULL,
+ PRIMARY KEY (`URL`),
+ UNIQUE KEY `Code` (`Code`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+CREATE TABLE `hackerearth_live` (
+ `Type` varchar(80) NOT NULL,
+ `Name` varchar(50) NOT NULL,
+ `URL` varchar(200) NOT NULL,
+ PRIMARY KEY (`URL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+
+CREATE TABLE `hackerearth_upcoming` (
+ `Type` varchar(20) NOT NULL,
+ `Name` varchar(50) NOT NULL,
+ `URL` varchar(200) NOT NULL,
+ `Start_Date` datetime NOT NULL,
+ PRIMARY KEY (`URL`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
