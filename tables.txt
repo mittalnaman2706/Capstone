@@ -38,3 +38,10 @@ CREATE TABLE `codechef_profile` (
  `Problems` mediumtext DEFAULT NULL,
  PRIMARY KEY (`Username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+
+CREATE TABLE `codechef_practice` (
+  `NAME` varchar(30) NOT NULL,
+  `CODE` varchar(20) NOT NULL,
+  `TYPE` varchar(20) NOT NULL,
+  `URL` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;

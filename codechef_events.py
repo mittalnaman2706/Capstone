@@ -22,10 +22,11 @@ cnx.commit()
 months = dict(Jan="01", Feb="02", Mar="03", Apr="04", May="05", Jun="06", Jul="07", Aug="08", Sep="09", Oct="10", Nov="11", Dec="12")
 
 url = "https://www.codechef.com/contests"
-f3=open('events.txt','w')
 
 data=requests.get(url).text
 soup = BeautifulSoup(data,'lxml')
+
+print("1")
 
 map = dict() 
 
@@ -37,6 +38,7 @@ for table in soup.findAll('table'):
   cnt = 0
   for column in row.findAll('td'):
    
+   print(column.text)
    if cnt == 0:
     contest_code.append(column.text)
     contest_url.append("https://www.codechef.com/"+column.text)
@@ -48,6 +50,8 @@ for table in soup.findAll('table'):
     end_time.append(column.text)
     
    cnt = cnt +1
+
+print(contest_url)
 
 for i in range(len(contest_code)):
   
@@ -64,12 +68,10 @@ for i in range(len(contest_code)):
   
   sql = "INSERT INTO codechef VALUES(%s, %s, %s, %s, %s)"
   val = (contest_code[i], contest_name[i], start_time[i], 
-  	end_time[i], contest_url[i])
+    end_time[i], contest_url[i])
   mycursor.execute(sql, val)
   cnx.commit()
 
-<<<<<<< HEAD:codechef_events.py
+print("3")
+
 cnx.close()
-=======
-cnx.close()
->>>>>>> 970ae6363f02641656d0611cdb9d213c508ad4ff:codechef.py
