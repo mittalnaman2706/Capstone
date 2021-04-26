@@ -4,7 +4,6 @@ from bs4 import BeautifulSoup
 import mysql.connector
 import sys
 from selenium import webdriver
-
 cnx = mysql.connector.connect(user='root', password='', host='localhost', database='capstone')
 
 mycursor = cnx.cursor()
@@ -13,20 +12,29 @@ username = sys.argv[1]
 url = "https://www.codechef.com/users/"+username
 
 data = ""
-driver = webdriver.Chrome('C:/Users/HP/Desktop/chromedriver.exe')
+driver = webdriver.Edge('F:/msedgedriver.exe')
 driver.get(url)
 tables = driver.find_elements_by_xpath("//section[contains(@class,'rating-data-section submissions')]")
 for table in tables:
     data = (table.text)
 
-print(data)
 
-partial_ac = ""
-accepted = ""
-wrong = ""
-tle = ""
-runtime_err = ""
-compile_err = ""
+output = data.split('\n')
+
+partial_ac = output[1][0:len(output[1])//2]
+compile_err = output[2][0:len(output[2])//2]
+runtime_err = output[3][0:len(output[3])//2]
+tle = output[4][0:len(output[4])//2]
+wrong = output[5][0:len(output[5])//2]
+accepted = output[6][0:len(output[6])//2]
+
+print(partial_ac)
+print(compile_err)
+print(runtime_err)
+print(tle)
+print(wrong)
+print(accepted)
+
 
 data = requests.get(url).text
 soup = BeautifulSoup(data,'lxml')
