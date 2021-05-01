@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Problems Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+    $(document).ready(function() {
+        var $filterableRows = $('.table').find('tr').not(':first'),
+        
+        $inputs = $('.search-key');
+
+        $inputs.on('input', function() {
+
+            $filterableRows.hide().filter(function() {
+            var $filterableColumns = $(this).find('td').not(':last');
+            return $filterableColumns.filter(function() {
+                
+              var tdText = $(this).text().toLowerCase(),
+                    inputValue = $('#' + $(this).data('input')).val().toLowerCase();
+            
+                return tdText.indexOf(inputValue) != -1;
+            
+            }).length == $(this).find('td').length-1;
+          }).show();
+
+        });
+    });
+    </script>
+    
+    
+
+	</head>
+	<body>
+    
+    
+    <h1 style="text-align:right;"><strong>CODER'S GYM</strong></h1>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section"><i><u>Problems Arena</u></i></h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="text-center mb-4">Click on <strong>Try</strong> to Solve</h4>
+                    
+                    <input type="text" id="Code" class="search-key" placeholder="Code">
+                    <input type="text" id="Title" class="search-key" placeholder="Title">
+                    <input type="text" id="Difficulty" class="search-key" placeholder="Difficulty">
+        
+                    
+					<div class="table-wrap">
+						<table class="table">
+					    <thead class="thead-primary">
+					      <tr>
+					        <th>Code</th>
+					        <th>Title</th>
+					        <th>Difficulty</th>
+					        <th>Try</th>
+                            
+					        
+					      </tr>
+					    </thead>
+					    <tbody>
+					      <tr>
+					        <td scope="row" class="scope" data-input="Code"><b>ABC</b></th>
+					        <td data-input="Title">Two Sum</td>
+					        
+					        <td data-input="Difficulty">Easy</td>
+                           
+					        
+					        <td><a href="https://leetcode.com/problems/two-sum/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Try</a></td>
+					      </tr>
+					      <tr>
+					        <td scope="row" class="scope" data-input="Code"><b>BCD</b></th>
+					        <td data-input="Title">Add Two Numbers</td>
+					        
+					        <td data-input="Difficulty">Medium</td>
+                           
+					        
+					        <td><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Try</a></td>
+					      </tr>
+					      <tr>
+					        <td scope="row" class="scope" data-input="Code"><b>CDE</b></th>
+					        <td data-input="Title">Longest Substring Without Repeating Characters</td>
+					        
+					        <td data-input="Difficulty">Medium</td>
+                           
+					        
+					        <td><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Try</a></td>
+					      </tr>
+					      <tr>
+					        <td scope="row" class="scope" data-input="Code"><b>DEF</b></th>
+					        <td data-input="Title">Median of Two Sorted Arrays</td>
+					        
+					        <td data-input="Difficulty">Hard</td>					        
+					        <td><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Try</a></td>
+					      </tr>
+					      <tr>
+					        <td scope="row" class="scope" data-input="Code"><b>EFG</b></th>
+					        <td data-input="Title">Longest Palindromic Substring </td>
+					        
+					        <td data-input="Difficulty">Medium</td>
+                           
+					        
+					        <td><a href="https://leetcode.com/problems/longest-palindromic-substring/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Try</a></td>
+					      </tr>
+					      <tr>
+					        <td scope="row" class="scope border-bottom-0" data-input="Code"><b>FGH</b></th>
+					        <td class="border-bottom-0" data-input="Title">Zingzag Conversion</td>
+					        
+					        <td class="border-bottom-0" data-input="Difficulty">Medium</td>
+					     
+					        <td class="border-bottom-0"><a href="https://leetcode.com/problems/zigzag-conversion/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Try</a></td>
+					      </tr>
+					    </tbody>
+					  </table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    
+
+	</body>
+</html>
+
