@@ -8,15 +8,15 @@
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+
 	<link rel="stylesheet" href="Frontend/Problem+Challenges-Final/css/style.css">
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
     <script>
     $(document).ready(function() {
         var $filterableRows = $('.table').find('tr').not(':first'),
-        
+
         $inputs = $('.search-key');
 
         $inputs.on('input', function() {
@@ -24,25 +24,25 @@
             $filterableRows.hide().filter(function() {
             var $filterableColumns = $(this).find('td').not(':last');
             return $filterableColumns.filter(function() {
-                
+
               var tdText = $(this).text().toLowerCase(),
                     inputValue = $('#' + $(this).data('input')).val().toLowerCase();
-            
+
                 return tdText.indexOf(inputValue) != -1;
-            
+
             }).length == $(this).find('td').length-1;
           }).show();
 
         });
     });
     </script>
-    
-    
+
+
 
 	</head>
 	<body>
-    
-    
+
+
     <h1 style="text-align:right;"><strong>CODER'S GYM</strong></h1>
 	<section class="ftco-section">
 		<div class="container">
@@ -54,45 +54,45 @@
 			<div class="row">
 				<div class="col-md-12">
 					<h4 class="text-center mb-4">Click on <strong>Start</strong> to begin.</h4>
-                    
-                    
+
+
                     <input type="text" id="Code" class="search-key" placeholder="Code" size="10">
                     <input type="text" id="Title" class="search-key" placeholder="Title" size="31">
                     <input type="text" id="Platform" class="search-key" placeholder="Platform" size="10">
                     <input type="datetime" id="StartDate" class="search-key" placeholder="DD-MM-YYYY hh:mm:ss (Start Date)" size="29">
                     <input type="datetime" id="EndDate" class="search-key" placeholder="DD-MM-YYYY hh:mm:ss (End Date)" size="29">
-        
-                    
+
+
 					<div class="table-wrap">
 						<table class="table">
 					    <thead class="thead-primary">
 					      <tr>
-                            
+
 					        <th>Code</th>
 					        <th>Title</th>
                             <th>Platform</th>
 					        <th>Start Date</th>
                             <th>End Date</th>
 					        <th>Start</th>
-                            
-					        
+
+
 					      </tr>
 					    </thead>
 					    <tbody>
 					      <tr>
 					        <td scope="row" class="scope" data-input="Code"><b>ABC</b></th>
 					        <td data-input="Title">AIM ICPC - Weekly Training Series</td>
-					        
-					        <td data-input="Platform">Codechef</td>
+
+					        <td data-input="Platform"><%= testing %> </td>
                             <td data-input="StartDate">29-12-2020  00:00:00</td>
                             <td data-input="EndDate">17-06-2023  00:00:00</td>
-					        
+
 					        <td><a href="https://www.codechef.com/AIMICPC" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
 					      </tr>
 					      <tr>
 					        <td scope="row" class="scope" data-input="Code"><b>BCD</b></th>
 					        <td data-input="Title">April Challenge 2021</td>
-					        
+
 					        <td data-input="Platform">Codeforces</td>
                             <td data-input="StartDate">02-04-2021  15:00:00</td>
 					        <td data-input="EndDate">12-04-2021  15:00:00</td>
@@ -101,7 +101,7 @@
 					      <tr>
 					        <td scope="row" class="scope" data-input="Code"><b>CDE</b></th>
 					        <td data-input="Title">Code-a-Thon</td>
-					        
+
 					        <td data-input="Platform">LeetCode</td>
                             <td data-input="StartDate">18-04-2021  10:00:00</td>
 					        <td data-input="EndDate">18-04-2021  12:00:00</td>
@@ -110,17 +110,17 @@
 					      <tr>
 					        <td scope="row" class="scope" data-input="Code"><b>DEF</b></th>
 					        <td data-input="Title">Code-MAT</td>
-					        
-					        <td data-input="Platform">Codeforces</td>	
+
+					        <td data-input="Platform">Codeforces</td>
                             <td data-input="StartDate">15-04-2021  17:30:00</td>
                             <td data-input="EndDate">15-04-2021  19:30:00</td>
-                            
+
 					        <td><a href="https://www.codechef.com/CDMT2021" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
 					      </tr>
 					      <tr>
 					        <td scope="row" class="scope" data-input="Code"><b>EFG</b></th>
 					        <td data-input="Title">CODUO - Prelims </td>
-					        
+
 					        <td data-input="Platform">Codechef</td>
                             <td data-input="StartDate">14-04-2021  20:30:00</td>
 					        <td data-input="EndDate">15-04-2021  00:00:00</td>
@@ -129,13 +129,13 @@
 					      <tr>
 					        <td scope="row" class="scope border-bottom-0" data-input="Code"><b>FGH</b></th>
 					        <td class="border-bottom-0" data-input="Title">Code Wars Round 1 ( Practice Round )</td>
-					        
+
 					        <td class="border-bottom-0" data-input="Platform">LeetCode</td>
                             <td data-input="StartDate">22-04-2021  18:00:00</td>
                             <td data-input="EndDate">22-04-2021  19:30:00</td>
 					        <td class="border-bottom-0"><a href="https://www.codechef.com/CDW12021" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
 					      </tr>
-                          
+
 					    </tbody>
 					  </table>
 					</div>
@@ -143,7 +143,7 @@
 			</div>
 		</div>
 	</section>
-    
+
 
 	</body>
 </html>
