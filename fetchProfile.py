@@ -120,7 +120,7 @@ print(tabulate([['Name', username], ['Username', username], ['Country', country]
 print()
 print(tabulate([['Rating (Overall)', ratingOverall], ['Long Challenege', ratingLong], ['Cook - Off', ratingCook], ['Lunch Time', ratingLunch]], headers=['Key', 'Value'], tablefmt='orgtbl'))
 print()
-print(tabulate([['Problems Solved', ], ['Submissions', ], ['Average Attempt', submissions/countSolved], ['Strong Areas', ], ['Weak Areas', ]], headers=['Key', 'Value'], tablefmt='orgtbl'))
+print(tabulate([['Problems Solved', countSolved], ['Submissions', submissions], ['Average Attempt', submissions/countSolved]], headers=['Key', 'Value'], tablefmt='orgtbl'))
 
 
 cnx.close()

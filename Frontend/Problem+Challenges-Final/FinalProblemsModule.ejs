@@ -48,56 +48,45 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section"><i><u>Challenges Arena</u></i></h2>
+					<h2 class="heading-section"><i><u>Problems Arena</u></i></h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<h4 class="text-center mb-4">Click on <strong>Start</strong> to begin.</h4>
+					<h4 class="text-center mb-4">Click on <strong>Try</strong> to Solve</h4>
 
-
-                    <input type="text" id="Code" class="search-key" placeholder="Code" size="10">
-                    <input type="text" id="Title" class="search-key" placeholder="Title" size="31">
-                    <input type="text" id="Platform" class="search-key" placeholder="Platform" size="10">
-                    <input type="datetime" id="StartDate" class="search-key" placeholder="DD-MM-YYYY hh:mm:ss (Start Date)" size="29">
-                    <input type="datetime" id="EndDate" class="search-key" placeholder="DD-MM-YYYY hh:mm:ss (End Date)" size="29">
+                    <input type="text" id="Code" class="search-key" placeholder="Code">
+                    <input type="text" id="Title" class="search-key" placeholder="Title">
+                    <input type="text" id="Difficulty" class="search-key" placeholder="Difficulty">
 
 
 					<div class="table-wrap">
+
 						<table class="table">
 					    <thead class="thead-primary">
 					      <tr>
-
 					        <th>Code</th>
 					        <th>Title</th>
-                            <th>Platform</th>
-					        <th>Start Date</th>
-                            <th>End Date</th>
-					        <th>Start</th>
-
-
+					        <th>Difficulty</th>
+					        <th>Try</th>
 					      </tr>
 					    </thead>
+
 					    <tbody>
-					      <tr>
 
-							  <% if(contests.length > 0){ %>
+					     <% if(problems.length > 0){ %>
 
-							  <% for (var i = 0 ; i < contests.length ; i++){ %>
+                                  <% for ( var i = 0 ; i < problems.length ; i++){ %>
+                                     <tr>
+                                      <td scope="row" class="scope" data-input="Code"><b><%= problems[i][0]%></b></td>
+                                      <td data-input="Title"><%= problems[i][1]%></td>
 
-							  <td scope="row" class="scope" data-input="Code"><b><%= contests[i][0]%></b></th>
-							  <td data-input="Title"><%= contests[i][1]%></td>
-
-							  <td data-input="Platform">Codechef</td>
-							  <td data-input="StartDate"><%= contests[i][2]%></td>
-							  <td data-input="EndDate"><%= contests[i][3]%></td>
-
-							  <td><a href="<%= contests[i][4]%>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
-						  </tr>
-						  <% } %>
-						  <% } %>
-
-					    </tbody>
+                                      <td data-input="Difficulty"><%= problems[i][2]%></td>
+                                      <td><a href="<%= problems[i][3]%>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Try</a></td>
+                                      </tr>
+                                  <% } %>
+                               <% } %>
+  		               </tbody>
 					  </table>
 					</div>
 				</div>
