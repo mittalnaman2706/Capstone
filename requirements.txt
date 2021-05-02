@@ -1,0 +1,8 @@
+requests==2.25.1
+selenium==3.141.0
+pandas==1.2.4
+matplotlib==3.4.1
+numpy==1.20.2
+tabulate==0.8.9
+beautifulsoup4==4.9.3
+mysql_connector_repackaged==0.3.1
