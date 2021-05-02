@@ -2,9 +2,9 @@
 
 
 Dependencies:
-Run: pip install -r requirements.txt
-Run: npm install
+- Run: pip install -r requirements.txt
+- Run: npm install
 
 
 To run:
-node main.js
+- node main.js
