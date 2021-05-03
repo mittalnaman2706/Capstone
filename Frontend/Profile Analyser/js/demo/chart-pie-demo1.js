@@ -4,14 +4,25 @@ Chart.defaults.global.defaultFontColor = '#858796';
 
 // Pie Chart Example
 var ctx1 = document.getElementById("myPieChart1");
+
+var script_tag = document.getElementById('piechart1')
+
+var l  = script_tag.getAttribute("l");
+var v  = script_tag.getAttribute("v");
+
+var label = l.split("$")
+var val = v.split("$")
+
 var myPieChart1 = new Chart(ctx1, {
   type: 'doughnut',
   data: {
-    labels: ["Direct", "Referral", "Social"],
+    labels: label,
     datasets: [{
-      data: [55, 30, 15],
-      backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
-      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+      data: val,
+      backgroundColor: ['#2e59d9', '#17a673', '#2c9faf', '#2085ec', '#8464a0', '#cea9bc', '#f1e59c', '#0dc7bb',
+      '#aaf8e1', '#624634', '#c2b3b3'],
+      hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf', '#2085ec', '#8464a0', '#cea9bc', '#f1e59c', '#0dc7bb',
+      '#aaf8e1', '#624634', '#c2b3b3'],
       hoverBorderColor: "rgba(234, 236, 244, 1)",
     }],
   },
@@ -27,10 +38,14 @@ var myPieChart1 = new Chart(ctx1, {
       displayColors: false,
       caretPadding: 10,
     },
-    legend: {
-      display: false
-    },
-    cutoutPercentage: 80,
+     legend: {
+          display: true,
+          position: 'bottom',
+          labels: {
+            fontColor: "#000080",
+          }
+        },
+    cutoutPercentage: 0,
   },
 });
 

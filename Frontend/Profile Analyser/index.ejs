@@ -144,9 +144,9 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= username%></span>
                                 <img class="img-profile rounded-circle"
-                                    src="img/undraw_profile.svg">
+                                    src="Frontend/Profile Analyser/img/undraw_profile.svg">
                             </a>
 
                         </li>
@@ -177,7 +177,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Rating</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">#Sumukh, Enter Value Here#</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= rating%></div>
                                         </div>
 
                                     </div>
@@ -193,7 +193,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                                 Total Submissions</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">#Sumukh, Enter Value Here#</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= submissions%></div>
                                         </div>
 
                                     </div>
@@ -211,7 +211,7 @@
                                             </div>
                                             <div class="row no-gutters align-items-center">
                                                 <div class="col-auto">
-                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">#Sumukh, Enter Value Here#</div>
+                                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800"><%= solved%></div>
                                                 </div>
                                                 <div class="col">
                                                     <div class="progress progress-sm mr-2">
@@ -236,7 +236,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                                 Average Attempts</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800">#Sumukh, Enter Value Here#</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= average%></div>
                                         </div>
 
                                     </div>
@@ -251,15 +251,15 @@
 
                         <!-- Bar Chart -->
                         <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
+                            <div class="card shadow mb-4" style = "width:600px;">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Difficulty wise breakup</h6>
 
                                 </div>
                                 <!-- Card Body -->
-                                <div class="card-body">
+                                <div class="card-body" style = "width:600px;">
                                     <div class="chart-bar">
                                         <canvas id="myBarChart"></canvas>
                                     </div>
@@ -270,59 +270,58 @@
                         </div>
 
                         <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
+                        <div class="col-xl-4 col-lg-5" >
+                            <div class="card shadow mb-4" style = "width:400px;">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Verdicts</h6>
 
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
+                                    <div class="chart-pie pt-4 pb-2" style = "width:400px;">
                                         <canvas id="myPieChart"></canvas>
                                     </div>
                                     <div class="mt-4 text-center small">
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
+                                            <i class="fa fa-circle" style = "color:orange" ></i> Partially Accepted
                                         </span>
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
+                                            <i class="fa fa-circle green-color" style = "color:#366ecc"></i> Accepted
                                         </span>
                                         <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
+                                            <i class="fa fa-circle" style = "color:#b9cc36"></i> Wrong
                                         </span>
+                                        <span class="mr-2">
+                                             <i class="fa fa-circle" style = "color:yellow"></i> TLE
+                                         </span>
+                                         <span class="mr-2">
+                                             <i class="fa fa-circle" style = "color:brown"></i> Runtime Error
+                                         </span>
+                                         <span class="mr-2">
+                                             <i class="fa fa-circle" style = "color:gray"></i> Compilation Error
+                                         </span>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
 
-                        <div class="col-xl-4 col-lg-5" style="margin: auto;">
-                            <div class="card shadow mb-4">
+                        <div class="col-xl-4 col-lg-5" style="margin: 0px;">
+                            <div class="card shadow mb-4" style = "width:800px;">
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Revenue Sources</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Tags</h6>
 
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
+                                    <div class="chart-pie pt-4 pb-2" style = "width:800px; height:800px;">
                                         <canvas id="myPieChart1"></canvas>
                                     </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Direct
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> Social
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Referral
-                                        </span>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -398,9 +397,11 @@
 
     <!-- Page level custom scripts -->
     <script src="Frontend/Profile Analyser/js/demo/chart-area-demo.js"></script>
-    <script src="Frontend/Profile Analyser/js/demo/chart-pie-demo.js"></script>
-    <script src="Frontend/Profile Analyser/js/demo/chart-pie-demo1.js"></script>
-    <script src="Frontend/Profile Analyser/js/demo/chart-bar-demo.js"></script>
+    <script id="piechart" partialac = <%= partialac%> tle = <%= tle%> wrong = <%= wrong%> ac = <%= ac%>
+    runtimerr = <%= runtimerr%> compilerr = <%= compilerr%> src="Frontend/Profile Analyser/js/demo/chart-pie-demo.js"></script>
+    <script id="piechart1" l = <%= l%> v = <%= v%>  src="Frontend/Profile Analyser/js/demo/chart-pie-demo1.js"></script>
+    <script id="barchart" easy = <%= easy%> beg = <%= beg%> medium = <%= medium%> hard = <%= hard%>
+    src="Frontend/Profile Analyser/js/demo/chart-bar-demo.js" ></script>
 
 
 </body>

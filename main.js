@@ -13,6 +13,8 @@ app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname, 'views'))
 var mysql = require('mysql');
 
+var username
+
 var con = mysql.createConnection(
 	{
 	host: "localhost",
@@ -31,27 +33,97 @@ con.connect(
 	}
 );
 
-app.use(session({
-  genid: (req) => {
-    console.log('Inside the session middleware');
-    console.log(req.sessionID);
-    return uuidv4();
-  },
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true
-}));
+app.get('/login', (req, res) => {
+  res.render(__dirname +'/Frontend/Login/login')
+
+  });
+
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.post('/login', (req, res) => {
+ username = req.body.username
+ res.render(__dirname +'/Frontend/Landing Page-Final/cards.html')
+});
 
 
 app.get('/CodersGym', (req, res) => {
   res.render(__dirname +'/Frontend/Landing Page-Final/cards.html')
-  //res.send(dataToSend)
 
   });
 
 app.get('/Analysis', (req, res) => {
-  res.render(__dirname +'/Frontend/Profile Analyser/index')
-  //res.send(dataToSend)
+
+   var dataToSend = ""
+
+   const python = spawn('python', ['fetchProfile.py', username]);
+   python.stdout.on('data', function (data) {
+   console.log('Pipe data from python script ...');
+   dataToSend += data.toString();
+   });
+
+  python.on('close', (code) => {
+  console.log(`child process close all stdio with code ${code}`);
+  dataToSend = dataToSend.split("\n")
+
+  var username, rating, count, solved, average, submissions, easy, medium, beg, hard, partialac, tle, ac, runtimerr, compilerr, wrong
+  username = dataToSend[0]
+  rating = dataToSend[1]
+  solved = dataToSend[2]
+  submissions = dataToSend[3]
+  average = dataToSend[4]
+  easy = dataToSend[5]
+  beg = dataToSend[6]
+  medium = dataToSend[7]
+  hard = dataToSend[8]
+
+  partialac = dataToSend[9]
+  tle = dataToSend[10]
+  wrong = dataToSend[11]
+  ac = dataToSend[12]
+  compilerr = dataToSend[13]
+  runtimerr = dataToSend[14]
+
+  var tags = {}
+  tags = dataToSend[15]
+  console.log(tags)
+  tags = tags.split(",")
+
+  var map = {};
+  for (var k in tags)
+  {
+      var tags2 = tags[k].split(":")
+      tags2[0] = tags2[0].substr(1)
+
+      if(k==(tags.length-1))
+          tags2[1] = tags2[1].slice(0, tags2[1].length-2)
+
+      map[tags2[0]] = tags2[1]
+  }
+
+  var label = []
+  var val = []
+
+  var l = ""
+  var v = ""
+
+  for (var k in map)
+  {
+     l += k + "$"
+     map[k] = map[k].substr(1)
+     v += map[k] + "$"
+  }
+
+  var label = l.split("$")
+  var val = v.split("$")
+
+  console.log(l)
+  console.log(label)
+
+  res.render(__dirname +'/Frontend/Profile Analyser/index',{username:username, rating:rating, solved:solved,
+  submissions:submissions, average:average, easy:easy, beg:beg, medium:medium, hard:hard, partialac:partialac, tle:tle,
+  wrong:wrong, ac:ac, compilerr:compilerr, runtimerr:runtimerr, l:l, v:v, username:username})
+  });
 
   });
 
@@ -191,16 +263,5 @@ app.get('/PracticeProblems', (req, res) => {
     res.render(__dirname +'/Frontend/Problem+Challenges-Final/FinalProblemsModule',{problems:problems})
   });
   });
-
-
-const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
-
-
-app.post('/login', (req, res) => {
- console.log("hello")
- console.log(req.body.username)
- res.render(path.join(__dirname+'/login.html'));
-});
 
 app.listen(3000);

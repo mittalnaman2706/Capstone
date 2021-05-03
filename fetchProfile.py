@@ -43,19 +43,6 @@ for tup in result:
 
 submissions = partialac + compileerr + runtimeerr + tle + wrong + ac
 
-y = np.array([ac, partialac, compileerr, runtimeerr, tle, wrong])
-mylabels = ["Accepted", "Partially Accepted", "Compilation Error", "Runtime Error", "TLE", "Wrong"]
-myexplode = [0, 0, 0, 0, 0, 0]
-plt.pie(y, labels = mylabels, explode = myexplode, autopct='%1.0f%%')
-plt.legend(bbox_to_anchor = (1.05, 1.0, 0.60, 0.1), loc = 'upper right')
-plt.show()
-
-y = np.array([easy, beg, medium, hard])
-mylabels = ["Easy", "Beginner", "Medium", "Hard"]
-plt.bar(mylabels, y,color ='maroon',width = 0.4)
-plt.title("Difficulty wise breakup")
-plt.show()
-
 map = {}
 tagsList = pd.read_excel('Tags.xlsx')
 mylist = tagsList['Topic-Tags'].tolist()
@@ -95,7 +82,7 @@ finalTags2 = {k: v for k, v in sorted_tuples}
 others = 0
 size = len(finalTags2)
 z = (int((size * 30)/100))
-print(size, z)
+
 sz = len(finalTags2) - z
 res = dict(itertools.islice(finalTags2.items(), sz))
 for v in res.values():
@@ -112,6 +99,39 @@ while(1):
     del finalTags2[next(iter(finalTags2))]
     i = i + 1
 
+print(username)
+print(ratingOverall)
+print(countSolved)
+print(submissions)
+print(submissions/countSolved)
+
+print(easy)
+print(beg)
+print(medium)
+print(hard)
+
+print(partialac)
+print(tle)
+print(wrong)
+print(ac)
+print(compileerr)
+print(runtimeerr)
+print(finalTags2)
+
+"""
+y = np.array([ac, partialac, compileerr, runtimeerr, tle, wrong])
+mylabels = ["Accepted", "Partially Accepted", "Compilation Error", "Runtime Error", "TLE", "Wrong"]
+myexplode = [0, 0, 0, 0, 0, 0]
+plt.pie(y, labels = mylabels, explode = myexplode, autopct='%1.0f%%')
+plt.legend(bbox_to_anchor = (1.05, 1.0, 0.60, 0.1), loc = 'upper right')
+plt.show()
+
+y = np.array([easy, beg, medium, hard])
+mylabels = ["Easy", "Beginner", "Medium", "Hard"]
+plt.bar(mylabels, y,color ='maroon',width = 0.4)
+plt.title("Difficulty wise breakup")
+plt.show()
+
 plt.pie([v for v in finalTags2.values()], labels=[k for k in finalTags2],autopct='%1.0f%%')
 plt.legend(bbox_to_anchor=(1.05, 1.0, 0.60, 0.1), loc='upper right',)
 plt.show()
@@ -121,6 +141,6 @@ print()
 print(tabulate([['Rating (Overall)', ratingOverall], ['Long Challenege', ratingLong], ['Cook - Off', ratingCook], ['Lunch Time', ratingLunch]], headers=['Key', 'Value'], tablefmt='orgtbl'))
 print()
 print(tabulate([['Problems Solved', countSolved], ['Submissions', submissions], ['Average Attempt', submissions/countSolved]], headers=['Key', 'Value'], tablefmt='orgtbl'))
-
+"""
 
 cnx.close()
