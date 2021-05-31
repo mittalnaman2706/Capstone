@@ -46,3 +46,11 @@ CREATE TABLE `codechef_practice` (
  `URL` varchar(100) DEFAULT NULL,
  `Tags` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
+
+CREATE TABLE `codeforces_practice` (
+ `NAME` varchar(200) NOT NULL,
+ `CODE` varchar(200) NOT NULL,
+ `TYPE` varchar(200) NOT NULL,
+ `URL` varchar(200) NOT NULL,
+ PRIMARY KEY (`CODE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
