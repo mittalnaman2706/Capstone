@@ -83,6 +83,25 @@ others = 0
 size = len(finalTags2)
 z = (int((size * 30)/100))
 
+weaksz = (int((size * 50)/100))
+goodsz = weaksz + (int((size * 40)/100))
+profsz = (int((size * 10)/100))
+counter = 0
+weak = ""
+prof = ""
+good = ""
+
+for code in finalTags2:
+
+    if counter < weaksz:
+        weak += code + "$";
+    elif counter < goodsz:
+        good += code + "$"
+    else:
+        prof += code + "$";
+
+    counter += 1
+
 sz = len(finalTags2) - z
 res = dict(itertools.islice(finalTags2.items(), sz))
 for v in res.values():
@@ -117,6 +136,109 @@ print(ac)
 print(compileerr)
 print(runtimeerr)
 print(finalTags2)
+
+print(weak)
+print(good)
+print(prof)
+
+
+mycursor.execute("SELECT * FROM codechef_practice")
+result = mycursor.fetchall()
+sz = len(result)
+counter = 0
+x = p = 0
+
+mark = {}
+w = weak.split('$')
+for code in w:
+    mark[code] = 1
+
+easyRc = ""
+easyRl = ""
+while p < sz and counter < 10:
+
+    x = p
+    p = p + 1
+    tags = result[x][4]
+
+    if result[x][2] != "Beginner":
+        continue
+
+    splitted = tags.split('$')
+
+    for t in splitted:
+        if len(t) > 0 and t in mark:
+            easyRc += result[x][1] + "$"
+            easyRl += result[x][3] + "$"
+            counter = counter + 1
+            break
+
+
+print(easyRc)
+print(easyRl)
+
+counter = 0
+x = p = 0
+sz = len(result)
+mark = {}
+g = good.split('$')
+for code in g:
+    mark[code] = 1
+
+goodRc = ""
+goodRl = ""
+while p < sz and counter < 10:
+
+    x = p
+    p = p + 1
+    tags = result[x][4]
+
+    if result[x][2] != "Medium":
+        continue
+
+    splitted = tags.split('$')
+
+    for t in splitted:
+        if len(t) > 0 and t in mark:
+            goodRc += result[x][1] + "$"
+            goodRl += result[x][3] + "$"
+            counter = counter + 1
+            break
+
+print(goodRc)
+print(goodRl)
+
+counter = 0
+x = p = 0
+mark = {}
+g = prof.split('$')
+for code in g:
+    mark[code] = 1
+
+profRc = ""
+profRl = ""
+while p < sz and counter < 10:
+
+    x = p
+    p = p + 1
+    tags = result[x][4]
+
+    if result[x][2] != "Hard":
+        continue
+
+    splitted = tags.split('$')
+
+    for t in splitted:
+        if len(t) > 0 and t in mark:
+            profRc += result[x][1] + "$"
+            profRl += result[x][3] + "$"
+            counter = counter + 1
+            break
+
+    x = x+1
+
+print(profRc)
+print(profRl)
 
 """
 y = np.array([ac, partialac, compileerr, runtimeerr, tle, wrong])
