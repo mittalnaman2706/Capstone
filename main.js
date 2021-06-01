@@ -52,6 +52,50 @@ app.get('/CodersGym', (req, res) => {
 
   });
 
+app.get('/Recommendation', (req, res) => {
+
+   var dataToSend = ""
+
+   const python = spawn('python', ['fetchProfile.py', username]);
+   python.stdout.on('data', function (data) {
+   console.log('Pipe data from python script ...');
+   dataToSend += data.toString();
+   });
+
+   python.on('close', (code) => {
+   console.log(`child process close all stdio with code ${code}`);
+   dataToSend = dataToSend.split("\n")
+
+   weakar = dataToSend[16]
+   goodar = dataToSend[17]
+   profar = dataToSend[18]
+
+   easyrc = dataToSend[19]
+   easyrl = dataToSend[20]
+
+   mediumrc = dataToSend[21]
+   mediumrl = dataToSend[22]
+
+   hardrc = dataToSend[23]
+   hardrl = dataToSend[24]
+
+   var weakarea = weakar.split("$")
+   var goodarea = goodar.split("$")
+   var profarea = profar.split("$")
+
+   var easyl = easyrl.split("$")
+   var easyc = easyrc.split("$")
+   var mediuml = mediumrl.split("$")
+   var mediumc = mediumrc.split("$")
+   var hardl =   hardrl.split("$")
+   var hardc =   hardrc.split("$")
+
+   res.render(__dirname +'/Frontend/Recommendation System/recommend',{weakarea:weakarea, goodarea:goodarea, profarea:profarea,
+   easyl:easyl, easyc:easyc, mediuml:mediuml, mediumc:mediumc, hardc:hardc, hardl:hardl})
+
+  });
+  });
+
 app.get('/Analysis', (req, res) => {
 
    var dataToSend = ""
@@ -116,29 +160,6 @@ app.get('/Analysis', (req, res) => {
 
   var label = l.split("$")
   var val = v.split("$")
-
-  weakar = dataToSend[16]
-  goodar = dataToSend[17]
-  profar = dataToSend[18]
-
-  easyrc = dataToSend[19]
-  easyrl = dataToSend[20]
-
-  mediumrc = dataToSend[21]
-  mediumrl = dataToSend[22]
-
-  hardrc = dataToSend[23]
-  hardrl = dataToSend[24]
-
-  console.log(weakar)
-  console.log(goodar)
-  console.log(profar)
-  console.log(easyrc)
-  console.log(easyrl)
-  console.log(mediumrc)
-  console.log(mediumrl)
-  console.log(hardrc)
-  console.log(hardrl)
 
   res.render(__dirname +'/Frontend/Profile Analyser/index',{username:username, rating:rating, solved:solved,
   submissions:submissions, average:average, easy:easy, beg:beg, medium:medium, hard:hard, partialac:partialac, tle:tle,
