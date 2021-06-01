@@ -8,7 +8,7 @@ cnx = mysql.connector.connect(user='root', password='',
 
 mycursor = cnx.cursor()
 
-clear_table = "DELETE FROM CODEFORCES_PRACTICE";
+clear_table = "DELETE FROM CODEFORCES_PRACTICE"
 mycursor.execute(clear_table)
 cnx.commit()
 
@@ -69,11 +69,11 @@ while(index <= 70):
                      problem_diff.append("Easy")
                      continue
 
-                 if int(s) <= 800:
+                 if int(s) >= 0 and int(s) <= 800:
                      problem_diff.append("Beginner")
-                 elif int(s) <= 1400:
+                 elif int(s) > 800 and int(s) <= 1400:
                      problem_diff.append("Easy")
-                 elif int(s) <= 1800:
+                 elif int(s) > 1400 and int(s) <= 1800:
                      problem_diff.append("Medium")
                  else:
                      problem_diff.append("Hard")
