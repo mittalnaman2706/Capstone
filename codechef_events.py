@@ -22,7 +22,7 @@ months = dict(Jan="01", Feb="02", Mar="03", Apr="04", May="05", Jun="06", Jul="0
 
 url = "https://www.codechef.com/contests"
 
-driver = webdriver.Chrome('C:/Users/HP/Desktop/chromedriver.exe')
+driver = webdriver.Edge('F:/msedgedriver.exe')
 driver.get(url)
 driver.get("https://www.codechef.com/contests")
 
@@ -39,6 +39,7 @@ for table in tables:
                 contest_name.append(details.text)
             elif cnt == 2:
                 start_time.append(details.text)
+                print(details.text)
             else:
                 end_time.append(details.text)
             cnt = cnt+1
