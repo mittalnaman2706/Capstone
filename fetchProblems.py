@@ -16,3 +16,10 @@ result = mycursor.fetchall()
 
 for tup in result:
     print(tup)
+
+mycursor = cnx.cursor()
+mycursor.execute("SELECT * FROM codeforces_practice")
+result = mycursor.fetchall()
+
+for tup in result:
+    print(tup)

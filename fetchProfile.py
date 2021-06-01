@@ -185,8 +185,8 @@ g = good.split('$')
 for code in g:
     mark[code] = 1
 
-goodRc = ""
-goodRl = ""
+mediumRc = ""
+mediumRl = ""
 while p < sz and counter < 10:
 
     x = p
@@ -200,13 +200,13 @@ while p < sz and counter < 10:
 
     for t in splitted:
         if len(t) > 0 and t in mark:
-            goodRc += result[x][1] + "$"
-            goodRl += result[x][3] + "$"
+            mediumRc += result[x][1] + "$"
+            mediumRl += result[x][3] + "$"
             counter = counter + 1
             break
 
-print(goodRc)
-print(goodRl)
+print(mediumRc)
+print(mediumRl)
 
 counter = 0
 x = p = 0
@@ -215,8 +215,8 @@ g = prof.split('$')
 for code in g:
     mark[code] = 1
 
-profRc = ""
-profRl = ""
+hardRc = ""
+hardRl = ""
 while p < sz and counter < 10:
 
     x = p
@@ -230,15 +230,15 @@ while p < sz and counter < 10:
 
     for t in splitted:
         if len(t) > 0 and t in mark:
-            profRc += result[x][1] + "$"
-            profRl += result[x][3] + "$"
+            hardRc += result[x][1] + "$"
+            hardRl += result[x][3] + "$"
             counter = counter + 1
             break
 
     x = x+1
 
-print(profRc)
-print(profRl)
+print(hardRc)
+print(hardRl)
 
 """
 y = np.array([ac, partialac, compileerr, runtimeerr, tle, wrong])

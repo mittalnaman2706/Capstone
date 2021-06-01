@@ -87,6 +87,7 @@
 				<div class="col-md-12">
 					<h4 class="text-center mb-4">Click on <strong>Try</strong> to Solve</h4>
 
+					<input type="text" id="Platform" class="search-key" placeholder="Platform">
                     <input type="text" id="Code" class="search-key" placeholder="Code">
                     <input type="text" id="Title" class="search-key" placeholder="Title">
                     <input type="text" id="Difficulty" class="search-key" placeholder="Difficulty">
@@ -97,6 +98,7 @@
 						<table class="table">
 					    <thead class="thead-primary">
 					      <tr>
+					        <th>Platform</th>
 					        <th>Code</th>
 					        <th>Title</th>
 					        <th>Difficulty</th>
@@ -110,6 +112,17 @@
 
                                   <% for ( var i = 0 ; i < problems.length ; i++){ %>
                                      <tr>
+                                     <% var pl %>
+
+                                     <% if(i < 6142){ %>
+                                        <% pl = "CodeChef" %>
+                                     <% } %>
+
+                                     <% if(i > 6142){ %>
+                                     <% pl = "CodeForces" %>
+                                     <% } %>
+
+                                     <td data-input="Platform"><%= pl %></td>
                                       <td scope="row" class="scope" data-input="Code"><b><%= problems[i][0]%></b></td>
                                       <td data-input="Title"><%= problems[i][1]%></td>
 

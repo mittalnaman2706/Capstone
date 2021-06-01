@@ -117,8 +117,28 @@ app.get('/Analysis', (req, res) => {
   var label = l.split("$")
   var val = v.split("$")
 
-  console.log(l)
-  console.log(label)
+  weakar = dataToSend[16]
+  goodar = dataToSend[17]
+  profar = dataToSend[18]
+
+  easyrc = dataToSend[19]
+  easyrl = dataToSend[20]
+
+  mediumrc = dataToSend[21]
+  mediumrl = dataToSend[22]
+
+  hardrc = dataToSend[23]
+  hardrl = dataToSend[24]
+
+  console.log(weakar)
+  console.log(goodar)
+  console.log(profar)
+  console.log(easyrc)
+  console.log(easyrl)
+  console.log(mediumrc)
+  console.log(mediumrl)
+  console.log(hardrc)
+  console.log(hardrl)
 
   res.render(__dirname +'/Frontend/Profile Analyser/index',{username:username, rating:rating, solved:solved,
   submissions:submissions, average:average, easy:easy, beg:beg, medium:medium, hard:hard, partialac:partialac, tle:tle,
@@ -236,7 +256,7 @@ app.get('/PracticeProblems', (req, res) => {
     var arrayLength = dataToSend.length;
     var problems = new Array();
 
-    for (var i = 1; i < arrayLength-1; i++) {
+    for (var i = 1; i < 6142; i++) {
         data = dataToSend[i].split(",")
 
         var tempList = new Array();
@@ -256,6 +276,27 @@ app.get('/PracticeProblems', (req, res) => {
         }
             problems.push(tempList)
     }
+
+    for (var i = 6143; i < arrayLength-1; i++) {
+            data = dataToSend[i].split(",")
+
+            var tempList = new Array();
+            var tempList = [];
+
+             for(var j = 0; j < 4; j++)
+             {
+                        var s = data[j]
+                    var l = data[j].length
+
+                    if (j==0)
+                    s = data[j].slice(2, -1)
+                    else
+                    s = data[j].slice(2, -1)
+
+                    tempList.push(s)
+              }
+             problems.push(tempList)
+        }
 
     //for(var i=0;i<problems.length;i++)
     //console.log(problems[i][2])
