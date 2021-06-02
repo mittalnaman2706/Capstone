@@ -18,7 +18,7 @@ for tup in result:
     print(tup)
 
 mycursor = cnx.cursor()
-mycursor.execute("SELECT * FROM codeforces_practice")
+mycursor.execute("SELECT * FROM codeforces_problems")
 result = mycursor.fetchall()
 
 for tup in result:
