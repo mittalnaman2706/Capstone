@@ -44,12 +44,12 @@
   position: relative;
 }
 .card0 {
-  background: url("./17103052-1.jpg") center center no-repeat;
+  background: url("/Frontend/About Us/17103052-1.jpg") center center no-repeat;
   background-size: 300px;
   margin: 2px 10px;
 }
 .card0:hover {
-  background: url("./17103052-1.jpg") left center no-repeat;
+  background: url("/Frontend/About Us/17103052-1.jpg") left center no-repeat;
   background-size: 400px;
 
 }
@@ -60,12 +60,12 @@
   opacity: 1;
 }
 .card1 {
-  background: url("./sumukh.jpg") center center no-repeat;
+  background: url("/Frontend/About Us/sumukh.jpg") center center no-repeat;
   background-size: 300px;
   margin: 2px 10px;
 }
 .card1:hover {
-  background: url("./sumukh.jpg") left center no-repeat;
+  background: url("/Frontend/About Us/sumukh.jpg") left center no-repeat;
   background-size: 400px;
 }
 .card1:hover h4 {
@@ -75,12 +75,12 @@
   opacity: 1;
 }
 .card2 {
-  background: url("./mittal.jpg") center center no-repeat;
+  background: url("/Frontend/About Us/mittal.jpg") center center no-repeat;
   background-size: 300px;
   margin: 2px 10px;
 }
 .card2:hover {
-  background: url("./mittal.jpg") left center no-repeat;
+  background: url("/Frontend/About Us/mittal.jpg") left center no-repeat;
   background-size: 400px;
 }
 .card2:hover h4 {
@@ -90,12 +90,12 @@
   opacity: 1;
 }
 .card3 {
-  background: url("./piyush.jpeg") center center no-repeat;
+  background: url("/Frontend/About Us/piyush.jpeg") center center no-repeat;
   background-size: 300px;
   margin: 2px 10px;
 }
 .card3:hover {
-  background: url("./piyush.jpeg") left center no-repeat;
+  background: url("/Frontend/About Us/piyush.jpeg") left center no-repeat;
   background-size: 400px;
 }
 .card3:hover h4 {
@@ -105,12 +105,12 @@
   opacity: 1;
 }
 .card4 {
-  background: url("./nain.jpeg") center center no-repeat;
+  background: url("/Frontend/About Us/nain.jpeg") center center no-repeat;
   background-size: 300px;
   margin: 2px 10px;
 }
 .card4:hover {
-  background: url("./nain.jpeg") left center no-repeat;
+  background: url("/Frontend/About Us/nain.jpeg") left center no-repeat;
   background-size: 400px;
 }
 .card4:hover h4 {

@@ -46,6 +46,9 @@ app.post('/login', (req, res) => {
  res.render(__dirname +'/Frontend/Landing Page-Final/cards.html')
 });
 
+app.get('/developers', (req, res) => {
+ res.render(__dirname +'/Frontend/About Us/developers')
+});
 
 app.get('/CodersGym', (req, res) => {
   res.render(__dirname +'/Frontend/Landing Page-Final/cards.html')
