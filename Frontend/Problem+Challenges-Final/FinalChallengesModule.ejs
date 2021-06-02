@@ -55,7 +55,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="127.0.0.1:3000/developers">About Us</a>
+        <a class="nav-link" href="http://127.0.0.1:3000/developers">About Us</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -68,7 +68,7 @@
           <a class="dropdown-item" href="#">Something else here</a>
         </div>
       </li>
-      
+
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -110,32 +110,243 @@
 
 					      </tr>
 					    </thead>
-					    <tbody>
-					      <tr>
+					   <tbody>
+                       					      <tr>
 
-							  <% if(contests.length > 0){ %>
+                       							  <% if(contests.length > 0){ %>
 
-							  <% for (var i = 0 ; i < contests.length ; i++){ %>
+                       							  <% for (var i = 0 ; i < contests.length-1 ; i++){ %>
 
-							  <td scope="row" class="scope" data-input="Code"><b><%= contests[i][0]%></b></th>
-							  <td data-input="Title"><%= contests[i][1]%></td>
+                       							  <td scope="row" class="scope" data-input="Code"><b><%= contests[i][0]%></b></th>
+                       							  <td data-input="Title"><%= contests[i][1]%></td>
 
-							  <td data-input="Platform">Codechef</td>
-							  <td data-input="StartDate"><%= contests[i][2]%></td>
-							  <td data-input="EndDate"><%= contests[i][3]%></td>
+                       							  <td data-input="Platform">Codechef</td>
+                       							  <td data-input="StartDate"><%= contests[i][2]%></td>
+                       							  <td data-input="EndDate"><%= contests[i][3]%></td>
 
-							  <td><a href="<%= contests[i][4]%>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
-						  </tr>
-						  <% } %>
-						  <% } %>
+                       							  <td><a href="<%= contests[i][4]%>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       						  </tr>
+                       						  <% } %>
+                       						  <% } %>
 
-					    </tbody>
-					  </table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Educatio-l Codeforces Round 110 (Rated for Div. 2)</td>
+                       							  <td data-input="Platform">Codeforces</td>
+                       							  <td data-input="StartDate">04-06-2021 20:05:00</td>
+                       							  <td data-input="EndDate">04-06-2021 22:05:00</td>
+                       							  <td><a href="https://codeforces.com/contests" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td></tr>
+
+                        							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Codeforces Round #724 (Div. 2)</td>
+                       							  <td data-input="Platform">Codeforces</td>
+                       							  <td data-input="StartDate">06-06-2021 20:05:00</td>
+                       							  <td data-input="EndDate">04-06-2021 22:05:00</td>
+                       							  <td><a href="https://codeforces.com/contests" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Codeforces Round (Div. 1 + Div. 2)</td>
+                       							  <td data-input="Platform">Codeforces</td>
+                       							  <td data-input="StartDate">13-06-2021 21:05:00</td>
+                       							  <td data-input="EndDate">14-06-2021 00:05:00</td>
+                       							  <td><a href="https://codeforces.com/contests" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Kotlin Heroes: Practice 7</td>
+                       							  <td data-input="Platform">Codeforces</td>
+                       							  <td data-input="StartDate">22-06-2021 19:05:00</td>
+                       							  <td data-input="EndDate">23-06-2021 02:05:00</td>
+                       							  <td><a href="https://codeforces.com/contests" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Kotlin Heroes: Episode 7</td>
+                       							  <td data-input="Platform">Codeforces</td>
+                       							  <td data-input="StartDate">29-06-2021 20:05:00</td>
+                       							  <td data-input="EndDate">29-06-2021 22:35:00</td>
+                       							  <td><a href="https://codeforces.com/contests" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Codeforces Round (Div. 1 + Div. 2)</td>
+                       							  <td data-input="Platform">Codeforces</td>
+                       							  <td data-input="StartDate">17-07-2021 20:05:00</td>
+                       							  <td data-input="EndDate">17-07-2021 23:05:00</td>
+                       							  <td><a href="https://codeforces.com/contests" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+
+
+
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">hackCovid 2.0</td>
+                       							  <td data-input="Platform">Hackerearth Live</td>
+                       							  <td data-input="StartDate">-</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hackathon/hackerearth-hackcovid-2/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Karomi Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Live</td>
+                       							  <td data-input="StartDate">-</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/karomi-developer-hiring-challenge/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Amazon Business Research Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Live</td>
+                       							  <td data-input="StartDate">-</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/amazon-ml-engineer-hiring-challenge-may21-round-1/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Elear Solutions Intern Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Live</td>
+                       							  <td data-input="StartDate">-</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/elear-solutions-intern-hiring-challenge/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Fast, furious and Insured: Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Live</td>
+                       							  <td data-input="StartDate">-</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/competitive/hackerearth-machine-learning-challenge-vehicle-insurance-claim/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Integrate to Disrupt Hackathon</td>
+                       							  <td data-input="Platform">Hackerearth Live</td>
+                       							  <td data-input="StartDate">-</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hackathon/symblais-disruption-hackathon/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">AI Hackathon</td>
+                       							  <td data-input="Platform">Hackerearth Live</td>
+                       							  <td data-input="StartDate">-</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://accenture-applied-intelligence-hackathon.hackerearth.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">FaaS Wars II</td>
+                       							  <td data-input="Platform">Hackerearth Live</td>
+                       							  <td data-input="StartDate">-</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hackathon/faas-wars-season-2/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Hack of PI</td>
+                       							  <td data-input="Platform">Hackerearth Live</td>
+                       							  <td data-input="StartDate">-</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://hack-of-pi.hackerearth.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+
+
+
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Mercedes Benz Data Engineer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">11-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/mercedes-benz-data-engineer-hiring-challenge/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">MERN Stack Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">04-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/mern-stack-developer-hiring-challenge-june21/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Rupeek Backend Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">04-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/rupeek-backend-developer-hiring-challenge-2021/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Corner Stone Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">04-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/cornerstone-developer-hiring-challenge/" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Rupeek Android Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">04-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/rupeek-android-developer-hiring-challenge/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">June Easy '21</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">05-06-2021 09:30</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/competitive/hackerearth-june-easy-21/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Mercedes Benz Cloud PLatform Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">11-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/mercedes-benz-cloud-platform-developer-hiring-challenge-may21/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Elear Solutions Platform Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">11-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/elear-solutions-platform-developer-hiring-challenge/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Playment Backend Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">11-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/playment-backend-developer-hiring-challenge/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Playment Frontend Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">11-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/playment-frontend-developer-hiring-challenge/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Big Data Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">11-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/big-data-developer-hiring-challenge-june21/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">HSBC Android Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">11-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/hsbc-android-developer-hiring-challenge/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">HSBC iOS Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">11-06-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/hsbc-ios-developer-hiring-challenge/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+                       							  <td scope="row" class="scope" data-input="Code"><b>-</b></th>
+                       							  <td data-input="Title">Xebia Frontend Developer Hiring Challenge</td>
+                       							  <td data-input="Platform">Hackerearth Upcoming</td>
+                       							  <td data-input="StartDate">11-6-2021 18:00</td>
+                       							  <td data-input="EndDate">-</td>
+                       							  <td><a href="https://www.hackerearth.com/challenges/hiring/xebia-frontend-developer-hiring-challenge/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start</a></td>
+                       </tr>
+
+
+                       					    </tbody>
+                       					  </table>
+                       					</div>
+                       				</div>
+                       			</div>
+                       		</div>
+                       	</section>
 
 
 	</body>
