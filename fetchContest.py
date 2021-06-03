@@ -15,4 +15,11 @@ mycursor.execute("SELECT * FROM codechef")
 result = mycursor.fetchall()
 
 for tup in result:
-    print(tup)
+    print(tup) 
+
+mycursor = cnx.cursor()
+mycursor.execute("SELECT * FROM codeforces")
+result = mycursor.fetchall()
+
+for tup in result:
+    print(tup) 

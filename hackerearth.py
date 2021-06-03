@@ -26,13 +26,13 @@ cnx = mysql.connector.connect(user='root', password='',
 
 mycursor = cnx.cursor()
 
-clear_table = "DELETE FROM HACKEREARTH_LIVE";
-mycursor.execute(clear_table)
-cnx.commit()
+# clear_table = "DELETE FROM HACKEREARTH_LIVE";
+# mycursor.execute(clear_table)
+# cnx.commit()
 
-clear_table = "DELETE FROM HACKEREARTH_UPCOMING";
-mycursor.execute(clear_table)
-cnx.commit()
+# clear_table = "DELETE FROM HACKEREARTH_UPCOMING";
+# mycursor.execute(clear_table)
+# cnx.commit()
 
 
 months = dict(Jan="01", Feb="02", Mar="03", Apr="04", May="05", Jun="06", Jul="07", Aug="08", Sep="09", Oct="10", Nov="11", Dec="12")
@@ -77,12 +77,14 @@ for live in soup.findAll('div',{"class": "ongoing challenge-list"}):
 for i in range(len(live_challenge_type)):
 
   live_challenge_type[i].strip()
-  sql = "INSERT INTO hackerearth_live VALUES(%s, %s, %s)"
-  val = (live_challenge_type[i], live_challenge_name[i], live_challenge_url[i])
+  sql = "INSERT INTO codechef VALUES(%s, %s, %s, %s, %s)"
+  val = (live_challenge_type[i], live_challenge_name[i], "NA", "NA", live_challenge_url[i])
   mycursor.execute(sql, val)
   cnx.commit()
 
  
+
+
 for upcoming in soup.findAll('div',{"class": "upcoming challenge-list"}):
  for type in upcoming.findAll('div',{"class": "challenge-type light smaller caps weight-600"}):
   upcoming_challenge_type.append(type.text)
@@ -124,8 +126,8 @@ for upcoming in soup.findAll('div',{"class": "upcoming challenge-list"}):
 
 for i in range(len(live_challenge_type)):
  
-  sql = "INSERT INTO hackerearth_upcoming VALUES(%s, %s, %s, %s)"
-  val = (upcoming_challenge_type[i], upcoming_challenge_name[i], upcoming_challenge_url[i], upcoming_challenge_date[i])
+  sql = "INSERT INTO codechef VALUES(%s, %s, %s, %s, %s)"
+  val = ("NA", upcoming_challenge_name[i], upcoming_challenge_date[i], "NA", upcoming_challenge_url[i])
   mycursor.execute(sql, val)
   cnx.commit()
   

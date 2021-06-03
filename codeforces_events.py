@@ -1,20 +1,21 @@
 import requests
-from datetime import datetime
+from datetime import datetime, date, time, timedelta
 from bs4 import BeautifulSoup
 import mysql.connector
 
 contest_name = []
 contest_url = []
 start_time = []
+end_time = []
 contest_duration = []
 
 cnx = mysql.connector.connect(user='root', password='', host='localhost', database='capstone')
 
 mycursor = cnx.cursor()
 
-clear_table = "DELETE FROM codeforces";
-mycursor.execute(clear_table)
-cnx.commit()
+# clear_table = "DELETE FROM codeforces";
+# mycursor.execute(clear_table)
+# cnx.commit()
 
 months = dict(Jan="01", Feb="02", Mar="03", Apr="04", May="05", Jun="06", Jul="07", Aug="08", Sep="09", Oct="10", Nov="11", Dec="12")
 
@@ -53,12 +54,18 @@ contest_duration  = [x.replace("\n","") for x in contest_duration]
 start_time  = [x.replace("\r","") for x in start_time]
 start_time  = [x.replace("\n","") for x in start_time]
 
+end_time = start_time
+
+fil=open('text_file.txt','w')
+
+# for i in range(len(end_time)):
+
+#   contest_duration[i].replace(" ", "")
+#   print(int(contest_duration[i]))
 
 print(contest_name)
 print(start_time)
-print(contest_duration)
-
-fil=open('text_file.txt','w')
+print(end_time)
 
 for i in range(len(start_time)):
   fil.write(contest_name[i])
@@ -72,8 +79,8 @@ for i in range(len(contest_name)):
   # end_time[i] = end_time[i][7:11]+'-'+months[end_time[i][3:6]]+'-'+end_time[i][0:2]+' '+end_time[i][-8:]
   # print(2)
 
-  sql = "INSERT INTO codeforces VALUES(%s, %s, %s, %s)"
-  val = (contest_name[i], contest_url[i], start_time[i], contest_duration[i])
+  sql = "INSERT INTO codechef VALUES(%s, %s, %s, %s, %s)"
+  val = ("NA", contest_name[i], start_time[i], contest_duration[i], contest_url[i])
   mycursor.execute(sql, val)
   cnx.commit()
 
