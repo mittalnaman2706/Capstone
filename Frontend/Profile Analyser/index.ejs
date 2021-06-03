@@ -19,6 +19,8 @@
 
     <!-- Custom styles for this template-->
     <link href="Frontend/Profile Analyser/css/sb-admin-2.min.css" rel="stylesheet">
+    <script id="pdf" username = <%= username%> script src="/Frontend/Profile Analyser/pdf.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
 
 </head>
 
@@ -157,20 +159,20 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container-fluid" id="invoice">
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800">User Performance Visualiser</h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" id="download"><i
+                                                        class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
                     </div>
 
                     <!-- Content Row -->
                     <div class="row">
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-3 col-md-6 mb-4" id="invoice">
                             <div class="card border-left-primary shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -186,7 +188,7 @@
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-3 col-md-6 mb-4" id="invoice">
                             <div class="card border-left-success shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -202,7 +204,7 @@
                         </div>
 
                         <!-- Earnings (Monthly) Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-3 col-md-6 mb-4" id="invoice">
                             <div class="card border-left-info shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -229,7 +231,7 @@
                         </div>
 
                         <!-- Pending Requests Card Example -->
-                        <div class="col-xl-3 col-md-6 mb-4">
+                        <div class="col-xl-3 col-md-6 mb-4" id="invoice">
                             <div class="card border-left-warning shadow h-100 py-2">
                                 <div class="card-body">
                                     <div class="row no-gutters align-items-center">
@@ -250,7 +252,7 @@
                     <div class="row">
 
                         <!-- Bar Chart -->
-                        <div class="col-xl-8 col-lg-7">
+                        <div class="col-xl-8 col-lg-7" id="invoice">
                             <div class="card shadow mb-4" style = "width:610px; height:450px">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -270,7 +272,7 @@
                         </div>
 
                         <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5" >
+                        <div class="col-xl-4 col-lg-5" id="invoice">
                             <div class="card shadow mb-4" style = "width:615px; right:215px; height:450px">
                                 <!-- Card Header - Dropdown -->
                                 <div
@@ -308,7 +310,7 @@
                         </div>
 
 
-                        <div class="col-xl-4 col-lg-5" style="margin-left: 250px;">
+                        <div class="col-xl-4 col-lg-5" style="margin-left: 250px;" id="invoice">
                             <div class="card shadow mb-4" style = "width:800px; height:500px;">
                                 <!-- Card Header - Dropdown -->
                                 <div

@@ -8,7 +8,7 @@ cnx = mysql.connector.connect(user='root', password='',
 
 mycursor = cnx.cursor()
 
-clear_table = "DELETE FROM CODEFORCES_PRACTICE"
+clear_table = "DELETE FROM CODEFORCES_PROBLEMS"
 mycursor.execute(clear_table)
 cnx.commit()
 
@@ -83,7 +83,7 @@ while(index <= 70):
  index = index + 1
 
 for i in range(len(problem_code)):
-    sql = "INSERT INTO CODEFORCES_PRACTICE VALUES(%s, %s, %s, %s)"
+    sql = "INSERT INTO CODEFORCES_PROBLEMS VALUES(%s, %s, %s, %s)"
     val = (problem_name[i], problem_code[i], problem_diff[i], problem_url[i])
 
     mycursor.execute(sql, val)

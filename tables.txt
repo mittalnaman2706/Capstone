@@ -47,7 +47,7 @@ CREATE TABLE `codechef_practice` (
  `Tags` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1
 
-CREATE TABLE `codeforces_practice` (
+CREATE TABLE `codeforces_problems` (
  `NAME` varchar(200) NOT NULL,
  `CODE` varchar(200) NOT NULL,
  `TYPE` varchar(200) NOT NULL,
